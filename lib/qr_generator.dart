@@ -39,24 +39,18 @@ class _QrGeneratorState extends State<QrGenerator> {
               children: [
                 Text(
                   ntpTime.toLocal().toString(),
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 28,
-                  ),
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold,
+                    fontSize: 28, ),
                 ),
                 SizedBox(height: 30),
                 QrImage(
-                  // data: ntpTime.toUtc().toString(),
-                  data: ntpTime.toLocal().toString(),
-                  size: 200,
+                  data: ntpTime.toLocal().toString(), size: 200,
                   backgroundColor: Colors.white,
                   errorStateBuilder: (cxt, err) {
                     return Container(
                       child: Center(
                         child: Text(
-                          "Uh oh! Something went wrong...",
-                          textAlign: TextAlign.center,
+                          "Uh oh! Something went wrong...", textAlign: TextAlign.center,
                         ),
                       ),
                     );
@@ -69,10 +63,7 @@ class _QrGeneratorState extends State<QrGenerator> {
                     borderRadius: BorderRadius.circular(8),
                     color: Colors.white,
                   ),
-                  child: Text(
-                    'Please Scan Within 5 Sec',
-                    maxLines: 3,
-                  ),
+                  child: Text('Please Scan Within 5 Sec', maxLines: 3, ),
                 ),
               ],
             ),
