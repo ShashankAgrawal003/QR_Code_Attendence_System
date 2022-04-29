@@ -2,30 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:qr_code_attendence_system/firebase_file.dart';
 import 'package:qr_code_attendence_system/firebase_api.dart';
 import 'package:qr_code_attendence_system/image_file.dart';
-
 class NotesDownload extends StatefulWidget {
   const NotesDownload({Key key}) : super(key: key);
-
   @override
   _NotesDownloadState createState() => _NotesDownloadState();
 }
-
 class _NotesDownloadState extends State<NotesDownload> {
   Future<List<FirebaseFile>> futureFiles; // yaha se late kha gya me
-
   @override
   void initState() {
     super.initState();
-
     futureFiles = FirebaseApi.listAll('files/');
   }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
          appBar: AppBar(
-
            title: Text('Download Your Notes'),
            backgroundColor: Colors.teal,
          ),
@@ -56,7 +49,6 @@ class _NotesDownloadState extends State<NotesDownload> {
                           color: Colors.teal,
                           height: 10,
                           thickness: 2,
-
                         ),
                         const SizedBox(height: 12),
                         Expanded(
