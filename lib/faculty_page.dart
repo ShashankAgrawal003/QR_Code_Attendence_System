@@ -224,15 +224,12 @@ class _FacultyPageState extends State<FacultyPage> {
                       minWidth: 25.0,
                       child: RaisedButton(
                         elevation: 5.0,
-
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
+                        borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
                           Navigator.pushNamed(context, '/QrGenerator');
                         },
-
-                        // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
