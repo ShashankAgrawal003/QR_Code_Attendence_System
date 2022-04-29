@@ -1,44 +1,27 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
-// import 'package:intl/intl.dart';
 import 'package:ntp/ntp.dart';
-
 class QrGenerator extends StatefulWidget {
   const QrGenerator({Key key}) : super(key: key);
-
   @override
   _QrGeneratorState createState() => _QrGeneratorState();
 }
-
 class _QrGeneratorState extends State<QrGenerator> {
-   Timer timer;
+  Timer timer;
   DateTime ntpTime = DateTime.now();
-    // String time = DateFormat('ddkkmmss').format(DateTime.now());
   @override
   void initState() {
     super.initState();
     loadNTPTime();
      timer = Timer.periodic(Duration(seconds: 5), (Timer t) => loadNTPTime());
   }
-
   void loadNTPTime() async {
     DateTime time2= await NTP.now();
-    setState(()  {               // async
-      // ntpTime = await NTP.now();
-      ntpTime = time2;
+    setState(()  {          
+    ntpTime = time2;
     });
   }
-   // void getTime() {
-   //
-   //   String newtime = DateFormat('ddkkmmss').format(DateTime.now());
-   //
-   //   setState(() {
-   //     time = newtime;
-   //
-   //   });
-   // }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -55,8 +38,7 @@ class _QrGeneratorState extends State<QrGenerator> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-
-            ntpTime.toLocal().toString(),
+                  ntpTime.toLocal().toString(),
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
