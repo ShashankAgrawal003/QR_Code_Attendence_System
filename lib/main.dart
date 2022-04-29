@@ -64,12 +64,7 @@ class _MyAppState extends State<MyApp> {
         '/AccountSetting': (context) => AccountSetting(),
         '/ContactDetails': (context) => ContactDetails(),
         '/AttendancePage': (context) => AttendancePage(),
-
-
-
-
-
-      },
+       },
     );
   }
 }
