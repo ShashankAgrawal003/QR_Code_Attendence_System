@@ -32,13 +32,7 @@ class _AccountSettingState extends State<AccountSetting> {
         await (await uploadTask.whenComplete(() {})).ref.getDownloadURL();
     url = dowUrl.toString();
     print(url);
-    // TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() {});
-    // setState(() {
-    //   print("Profile Picture uploaded");
-    //   // Scaffold.of(context)
-    //   //     .showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));  setstate ke already comm tha
-    // });
-  }
+   }
 
   @override
   Widget build(BuildContext context) {
