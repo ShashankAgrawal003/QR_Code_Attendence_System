@@ -5,37 +5,27 @@ import 'package:flutter/rendering.dart';
 import 'package:qr_code_attendence_system/attendance_records.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'package:ntp/ntp.dart';
-
 class QrScanner extends StatefulWidget {
   const QrScanner({Key key}) : super(key: key);
-
   @override
   _QrScannerState createState() => _QrScannerState();
 }
-
 class _QrScannerState extends State<QrScanner> {
   final GlobalKey qrkey = GlobalKey(debugLabel: 'QR');
   QRViewController controller;
   Barcode barcode;
   int threshold = 5; // 20 sec threshold
   DateTime ntpScanTime = DateTime.now();
-
-
   String finalText = 'Scan QR Code';
-
   @override
   void initState() {
     super.initState();
-
-    // loadNTPTime();
   }
-
   @override
   void dispose() {
     controller.dispose();
     super.dispose();
   }
-
   @override
   void reassemble() async {
     super.reassemble();
@@ -45,7 +35,6 @@ class _QrScannerState extends State<QrScanner> {
       controller.resumeCamera();
     }
   }
-
   void loadNTPTime() async {
     DateTime time2 = await NTP.now();
     setState(() {
