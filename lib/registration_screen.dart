@@ -1,9 +1,6 @@
 import 'dart:io';
-
 import 'package:cloud_firestore/cloud_firestore.dart' show FirebaseFirestore;
-
 import 'package:qr_code_attendence_system/regex_validator.dart';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +15,6 @@ import 'package:qr_code_attendence_system/helperfunction.dart';
 
 class RegistrationScreen extends StatefulWidget {
   final String id = 'RegistrationScreen';
-
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -35,10 +31,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   File _image;
   double feedbackValue;
   double feedbackRate;
-
-  // String feedback = "0";
-  String url =
-      'https://firebasestorage.googleapis.com/v0/b/comperio-1071d.appspot.com/o/default-profile.webp?alt=media&token=c737b18e-9625-4b0d-8d7c-8ef5794486f3';
+  String url ='https://firebasestorage.googleapis.com/v0/b/comperio-1071d.appspot.com/o
+                /default-profile.webp?alt=media&token=c737b18e-9625-4b0d-8d7c-8ef5794486f3';
 
   Future getImages() async {
     PickedFile pickedFile =
