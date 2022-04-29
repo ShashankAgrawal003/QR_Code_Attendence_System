@@ -45,17 +45,14 @@ class _FacultyPageState extends State<FacultyPage> {
             padding: EdgeInsets.all(10),
             child: Column(
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                Row( mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Date :- $newtime',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      'Date :- $newtime', style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     SizedBox(width: 20),
                     Text(
-                      'Day:- $day',
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      'Day:- $day', style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -71,12 +68,10 @@ class _FacultyPageState extends State<FacultyPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        child: Column( crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'Leture 1',
-                              style: TextStyle(fontWeight: FontWeight.bold),
+                              'Leture 1', style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Text('Lecture Timings:- 10 Am - 11 Am'),
                             Text('Sub Name:-MNG'),
