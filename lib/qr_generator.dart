@@ -60,7 +60,7 @@ class _QrGeneratorState extends State<QrGenerator> {
               children: [
                 Text(
 
-            ntpTime.toLocal().toString(),
+            ntpTime.toLocal().toString()+ ','+AttendanceRecords.subjectCodeFaculty,
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -70,7 +70,7 @@ class _QrGeneratorState extends State<QrGenerator> {
                 SizedBox(height: 30),
                 QrImage(
                   // data: ntpTime.toUtc().toString(),
-                  data: ntpTime.toLocal().toString(),
+                  data: ntpTime.toLocal().toString() + ','+AttendanceRecords.subjectCodeFaculty,
                   size: 200,
                   backgroundColor: Colors.white,
                   errorStateBuilder: (cxt, err) {

@@ -4,6 +4,7 @@ import 'package:qr_code_attendence_system/choice.dart';
 import 'package:qr_code_attendence_system/pop_up_menu.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:qr_code_attendence_system/attendance_records.dart';
 
 class StudentPage extends StatefulWidget {
   const StudentPage({Key key}) : super(key: key);
@@ -21,6 +22,7 @@ class _StudentPageState extends State<StudentPage> {
   Widget build(BuildContext context) {
     String newtime = DateFormat('dd-MMM-yyyy').format(DateTime.now());
     String day=DateFormat('EEEE').format(DateTime.now());
+    var ref=AttendanceRecords();
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -77,8 +79,8 @@ class _StudentPageState extends State<StudentPage> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Text('Lecture Timings:- 10 Am - 11 Am'),
-                            Text('Sub Name:-MNG'),
-                            Text('Subject Code:-MBAH 001'),
+                            Text('Sub Name:-Artificial Intelligence For IIOT'),
+                            Text('Subject Code:-BCSE 0905'),
                             Text('Room No:-4001'),
                           ],
                         ),
@@ -93,8 +95,7 @@ class _StudentPageState extends State<StudentPage> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                         ),
-                        onPressed: (){
-
+                        onPressed: (){ref.getSubjectCodeStudent('BCSE 0905');
                           Navigator.pushNamed(context, '/QrScanner');
                         },
 
@@ -124,8 +125,8 @@ class _StudentPageState extends State<StudentPage> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Text('Lecture Timings:- 11 Am - 12 Pm'),
-                            Text('Sub Name:-Agile'),
-                            Text('Subject Code:-AGLE 001'),
+                            Text('Sub Name:-Total Quality Management'),
+                            Text('Subject Code:-BMEO 0001'),
                             Text('Room No:-4002'),
                           ],
                         ),
@@ -141,6 +142,7 @@ class _StudentPageState extends State<StudentPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
+                          ref.getSubjectCodeStudent('BMEO 0001');
                           Navigator.pushNamed(context, '/QrScanner');
                         },
 
@@ -155,98 +157,98 @@ class _StudentPageState extends State<StudentPage> {
                     ),
                   ],
                 )),
-                SizedBox(height: 15),
-                Container(
-                    child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Leture 3',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text('Lecture Timings:- 1 Pm - 2 Pm'),
-                            Text('Sub Name:-Industrial MNG'),
-                            Text('Subject Code:-INDM 001'),
-                            Text('Room No:-4003'),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 5),
-                    ButtonTheme(
-                      minWidth: 25.0,
-                      child: RaisedButton(
-                        elevation: 5.0,
-
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/QrScanner');
-                        },
-
-                        // color: Color(0xff311b92),
-                        color: Colors.green,
-                        textColor: Colors.white,
-                        child: Text(
-                          'Qr Scanner',
-                          style: TextStyle(fontSize: 10),
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-                SizedBox(height: 15),
-                Container(
-                    child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Leture 4',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text('Lecture Timings:- 2 Pm - 3 Pm'),
-                            Text('Sub Name:-Compiler'),
-                            Text('Subject Code:-COMP 001'),
-                            Text('Room No:-4004'),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 5),
-                    ButtonTheme(
-                      minWidth: 25.0,
-                      child: RaisedButton(
-                        elevation: 5.0,
-
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/QrScanner');
-                        },
-
-                        // color: Color(0xff311b92),
-                        color: Colors.green,
-                        textColor: Colors.white,
-                        child: Text(
-                          'Qr Scanner',
-                          style: TextStyle(fontSize: 10),
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
+                SizedBox(height: 10),
+                // Container(
+                //     child: Row(
+                //   children: [
+                //     Expanded(
+                //       child: Padding(
+                //         padding: const EdgeInsets.only(top: 15.0),
+                //         child: Column(
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           children: [
+                //             Text(
+                //               'Leture 3',
+                //               style: TextStyle(fontWeight: FontWeight.bold),
+                //             ),
+                //             Text('Lecture Timings:- 1 Pm - 2 Pm'),
+                //             Text('Sub Name:-Industrial MNG'),
+                //             Text('Subject Code:-INDM 001'),
+                //             Text('Room No:-4003'),
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //     SizedBox(width: 5),
+                //     ButtonTheme(
+                //       minWidth: 25.0,
+                //       child: RaisedButton(
+                //         elevation: 5.0,
+                //
+                //         shape: RoundedRectangleBorder(
+                //           borderRadius: BorderRadius.circular(18.0),
+                //         ),
+                //         onPressed: () {
+                //           Navigator.pushNamed(context, '/QrScanner');
+                //         },
+                //
+                //         // color: Color(0xff311b92),
+                //         color: Colors.green,
+                //         textColor: Colors.white,
+                //         child: Text(
+                //           'Qr Scanner',
+                //           style: TextStyle(fontSize: 10),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // )),
+                // SizedBox(height: 15),
+                // Container(
+                //     child: Row(
+                //   children: [
+                //     Expanded(
+                //       child: Padding(
+                //         padding: const EdgeInsets.only(top: 15.0),
+                //         child: Column(
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           children: [
+                //             Text(
+                //               'Leture 4',
+                //               style: TextStyle(fontWeight: FontWeight.bold),
+                //             ),
+                //             Text('Lecture Timings:- 2 Pm - 3 Pm'),
+                //             Text('Sub Name:-Compiler'),
+                //             Text('Subject Code:-COMP 001'),
+                //             Text('Room No:-4004'),
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //     SizedBox(width: 5),
+                //     ButtonTheme(
+                //       minWidth: 25.0,
+                //       child: RaisedButton(
+                //         elevation: 5.0,
+                //
+                //         shape: RoundedRectangleBorder(
+                //           borderRadius: BorderRadius.circular(18.0),
+                //         ),
+                //         onPressed: () {
+                //           Navigator.pushNamed(context, '/QrScanner');
+                //         },
+                //
+                //         // color: Color(0xff311b92),
+                //         color: Colors.green,
+                //         textColor: Colors.white,
+                //         child: Text(
+                //           'Qr Scanner',
+                //           style: TextStyle(fontSize: 10),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // )),
                 Divider(
                   color: Colors.black,
                   height: 65,

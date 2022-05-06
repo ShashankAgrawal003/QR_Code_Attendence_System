@@ -31,8 +31,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   File _image;
   double feedbackValue;
   double feedbackRate;
-  String url ='https://firebasestorage.googleapis.com/v0/b/comperio-1071d.appspot.com/o
-                /default-profile.webp?alt=media&token=c737b18e-9625-4b0d-8d7c-8ef5794486f3';
+  String url ='https://firebasestorage.googleapis.com/v0/b/comperio-1071d.appspot.com/o/default-profile.webp?alt=media&token=c737b18e-9625-4b0d-8d7c-8ef5794486f3';
 
   Future getImages() async {
     PickedFile pickedFile =

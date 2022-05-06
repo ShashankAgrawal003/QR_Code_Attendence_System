@@ -111,13 +111,16 @@ class _QrScannerState extends State<QrScanner> {
   }
 
   void fun() {
-    print(barcode.code);
+
     loadNTPTime();
-    DateTime timeOfGen = DateTime.parse(barcode.code);
-    print(timeOfGen);
+    List barstr=barcode.code.split(',');
+    String barfacsub=barstr[1];
+
+    DateTime timeOfGen = DateTime.parse(barstr[0]);
+
 
     final difference = ntpScanTime.difference(timeOfGen).inSeconds;
-    if (difference <= threshold) {
+    if ((difference <= threshold) && (barfacsub==AttendanceRecords.subjectCodeStudent)) {
       setState(() {
         finalText =
             'Your Attendence Marked Successfully Time: ' + '$difference';

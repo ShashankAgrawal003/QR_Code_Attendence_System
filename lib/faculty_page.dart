@@ -5,6 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:qr_code_attendence_system/choice.dart';
 import 'package:qr_code_attendence_system/pop_up_menu.dart';
 import 'package:intl/intl.dart';
+import 'package:qr_code_attendence_system/attendance_records.dart';
 
 class FacultyPage extends StatefulWidget {
   const FacultyPage({Key key}) : super(key: key);
@@ -23,6 +24,8 @@ class _FacultyPageState extends State<FacultyPage> {
   Widget build(BuildContext context) {
     String newtime = DateFormat('dd-MMM-yyyy').format(DateTime.now());
     String day=DateFormat('EEEE').format(DateTime.now());
+    var ref=AttendanceRecords();
+
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -70,12 +73,13 @@ class _FacultyPageState extends State<FacultyPage> {
                         padding: const EdgeInsets.only(top: 15.0),
                         child: Column( crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+
                             Text(
                               'Leture 1', style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Text('Lecture Timings:- 10 Am - 11 Am'),
-                            Text('Sub Name:-MNG'),
-                            Text('Subject Code:-MBAH 001'),
+                            Text('Sub Name:-Artificial Intelligence For IIOT'),
+                            Text('Subject Code:-BCSE 0905'),
                             Text('Room No:-4001'),
                           ],
                         ),
@@ -91,6 +95,7 @@ class _FacultyPageState extends State<FacultyPage> {
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
+                          ref.getSubjectCodeFaculty('BCSE 0905');
                           Navigator.pushNamed(context, '/QrGenerator');
                         },
 
@@ -120,8 +125,8 @@ class _FacultyPageState extends State<FacultyPage> {
                               style: TextStyle(fontWeight: FontWeight.bold),
                             ),
                             Text('Lecture Timings:- 11 Am - 12 Pm'),
-                            Text('Sub Name:-Agile'),
-                            Text('Subject Code:-AGLE 001'),
+                            Text('Sub Name:-Total Quality Management'),
+                            Text('Subject Code:-BMEO 0001'),
                             Text('Room No:-4002'),
                           ],
                         ),
@@ -136,7 +141,8 @@ class _FacultyPageState extends State<FacultyPage> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                         ),
-                        onPressed: () {
+                        onPressed: () {ref.getSubjectCodeFaculty('BMEO 0001');
+
                           Navigator.pushNamed(context, '/QrGenerator');
                         },
 
@@ -151,95 +157,95 @@ class _FacultyPageState extends State<FacultyPage> {
                     ),
                   ],
                 )),
-                SizedBox(height: 15),
-                Container(
-                    child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Leture 3',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text('Lecture Timings:- 1 Pm - 2 Pm'),
-                            Text('Sub Name:-Industrial MNG'),
-                            Text('Subject Code:-INDM 001'),
-                            Text('Room No:-4003'),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 5),
-                    ButtonTheme(
-                      minWidth: 25.0,
-                      child: RaisedButton(
-                        elevation: 5.0,
-
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/QrGenerator');
-                        },
-
-                        // color: Color(0xff311b92),
-                        color: Colors.green,
-                        textColor: Colors.white,
-                        child: Text(
-                          'Qr Generator',
-                          style: TextStyle(fontSize: 10),
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
-                SizedBox(height: 15),
-                Container(
-                    child: Row(
-                  children: [
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.only(top: 15.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Leture 4',
-                              style: TextStyle(fontWeight: FontWeight.bold),
-                            ),
-                            Text('Lecture Timings:- 2 Pm - 3 Pm'),
-                            Text('Sub Name:-Compiler'),
-                            Text('Subject Code:-COMP 001'),
-                            Text('Room No:-4004'),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 5),
-                    ButtonTheme(
-                      minWidth: 25.0,
-                      child: RaisedButton(
-                        elevation: 5.0,
-                        shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/QrGenerator');
-                        },
-                        color: Colors.green,
-                        textColor: Colors.white,
-                        child: Text(
-                          'Qr Generator',
-                          style: TextStyle(fontSize: 10),
-                        ),
-                      ),
-                    ),
-                  ],
-                )),
+                SizedBox(height: 10),
+                // Container(
+                //     child: Row(
+                //   children: [
+                //     Expanded(
+                //       child: Padding(
+                //         padding: const EdgeInsets.only(top: 15.0),
+                //         child: Column(
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           children: [
+                //             Text(
+                //               'Leture 3',
+                //               style: TextStyle(fontWeight: FontWeight.bold),
+                //             ),
+                //             Text('Lecture Timings:- 1 Pm - 2 Pm'),
+                //             Text('Sub Name:-Industrial MNG'),
+                //             Text('Subject Code:-INDM 001'),
+                //             Text('Room No:-4003'),
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //     SizedBox(width: 5),
+                //     ButtonTheme(
+                //       minWidth: 25.0,
+                //       child: RaisedButton(
+                //         elevation: 5.0,
+                //
+                //         shape: RoundedRectangleBorder(
+                //           borderRadius: BorderRadius.circular(18.0),
+                //         ),
+                //         onPressed: () {
+                //           Navigator.pushNamed(context, '/QrGenerator');
+                //         },
+                //
+                //         // color: Color(0xff311b92),
+                //         color: Colors.green,
+                //         textColor: Colors.white,
+                //         child: Text(
+                //           'Qr Generator',
+                //           style: TextStyle(fontSize: 10),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // )),
+                // SizedBox(height: 15),
+                // Container(
+                //     child: Row(
+                //   children: [
+                //     Expanded(
+                //       child: Padding(
+                //         padding: const EdgeInsets.only(top: 15.0),
+                //         child: Column(
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           children: [
+                //             Text(
+                //               'Leture 4',
+                //               style: TextStyle(fontWeight: FontWeight.bold),
+                //             ),
+                //             Text('Lecture Timings:- 2 Pm - 3 Pm'),
+                //             Text('Sub Name:-Compiler'),
+                //             Text('Subject Code:-COMP 001'),
+                //             Text('Room No:-4004'),
+                //           ],
+                //         ),
+                //       ),
+                //     ),
+                //     SizedBox(width: 5),
+                //     ButtonTheme(
+                //       minWidth: 25.0,
+                //       child: RaisedButton(
+                //         elevation: 5.0,
+                //         shape: RoundedRectangleBorder(
+                //         borderRadius: BorderRadius.circular(18.0),
+                //         ),
+                //         onPressed: () {
+                //           Navigator.pushNamed(context, '/QrGenerator');
+                //         },
+                //         color: Colors.green,
+                //         textColor: Colors.white,
+                //         child: Text(
+                //           'Qr Generator',
+                //           style: TextStyle(fontSize: 10),
+                //         ),
+                //       ),
+                //     ),
+                //   ],
+                // )),
                 Divider(
                   color: Colors.black,
                   height: 65,
