@@ -1,32 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
 class ApplyLeave extends StatefulWidget {
   const ApplyLeave({Key key}) : super(key: key);
-
   @override
   _ApplyLeaveState createState() => _ApplyLeaveState();
 }
-
 class _ApplyLeaveState extends State<ApplyLeave> {
   DateTime date;
   TimeOfDay time;
   String getDay() {
     if (date == null) {
-      return 'Select';
-    } else {
-      return '${date.month}/${date.day}/${date.year}';
-    }
-  }
-
+      return 'Select'; } 
+    else { return '${date.month}/${date.day}/${date.year}'; }
+   }
   String getTime() {
     if (time == null) {
-      return 'Select Time';
-    } else {
-      return '${time.hour}/${date.minute}';
-    }
+      return 'Select Time'; } 
+    else {
+      return '${time.hour}/${date.minute}'; }
   }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(

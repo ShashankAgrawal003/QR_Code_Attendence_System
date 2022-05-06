@@ -14,9 +14,7 @@ import 'package:qr_code_attendence_system/modify_attendance.dart';
 import 'package:qr_code_attendence_system/account_setting.dart';
 import 'package:qr_code_attendence_system/contact_details.dart';
 import 'package:qr_code_attendence_system/attendance_page.dart';
-
-
- import 'helperfunction.dart';
+import 'helperfunction.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -42,7 +40,6 @@ class _MyAppState extends State<MyApp> {
     setState(() {
       userIsLoggedIn = value;
     });
-
   }
   @override
   Widget build(BuildContext context) {
@@ -64,12 +61,7 @@ class _MyAppState extends State<MyApp> {
         '/AccountSetting': (context) => AccountSetting(),
         '/ContactDetails': (context) => ContactDetails(),
         '/AttendancePage': (context) => AttendancePage(),
-
-
-
-
-
-      },
+       },
     );
   }
 }

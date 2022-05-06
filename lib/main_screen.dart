@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -30,22 +29,19 @@ class MainScreen extends StatelessWidget {
                     Text(
                       'Faculty Login',
                       style: TextStyle(
-                          fontFamily: 'Pacifico', fontWeight: FontWeight.bold),
+                      fontFamily: 'Pacifico', fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 5),
                     ButtonTheme(
                       minWidth: 50.0,
                       child: RaisedButton(
                         elevation: 10.0,
-
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
                           Navigator.pushNamed(context, '/LoginScreen');
                         },
-
-                        // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
@@ -58,15 +54,12 @@ class MainScreen extends StatelessWidget {
                       minWidth: 50.0,
                       child: RaisedButton(
                         elevation: 10.0,
-
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
                           Navigator.pushNamed(context, '/FacultyPage');
                         },
-
-                        // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
@@ -96,15 +89,12 @@ class MainScreen extends StatelessWidget {
                       minWidth: 50.0,
                       child: RaisedButton(
                         elevation: 10.0,
-
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
                           Navigator.pushNamed(context, '/LoginScreen');
                         },
-
-                        // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
@@ -117,15 +107,12 @@ class MainScreen extends StatelessWidget {
                       minWidth: 50.0,
                       child: RaisedButton(
                         elevation: 10.0,
-
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
                           Navigator.pushNamed(context, '/StudentPage');
                         },
-
-                        // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(
@@ -155,15 +142,12 @@ class MainScreen extends StatelessWidget {
                       minWidth: 50.0,
                       child: RaisedButton(
                         elevation: 10.0,
-
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
                         ),
                         onPressed: () {
                           Navigator.pushNamed(context, '/AboutUs');
                         },
-
-                        // color: Color(0xff311b92),
                         color: Colors.green,
                         textColor: Colors.white,
                         child: Text(

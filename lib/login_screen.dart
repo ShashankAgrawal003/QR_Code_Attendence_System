@@ -18,10 +18,9 @@ class _LoginScreenState extends State<LoginScreen> {
   bool _autoValidate = false;
   bool showSpinner = false;
   final _auth = FirebaseAuth.instance;
-
   String email;
   String password;
-
+  
   @override
   void initState() {
     super.initState();
@@ -324,7 +323,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                             ],
                           ),
-                        ), // yaha lekhna hai
+                        ),
                       ),
                     ),
                   ),

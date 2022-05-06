@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
 import 'dart:io';
-
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/widgets.dart';
 import 'package:image_picker/image_picker.dart';
-
 import 'package:path/path.dart';
-
 class AccountSetting extends StatefulWidget {
   @override
   _AccountSettingState createState() => _AccountSettingState();
 }
-
 class _AccountSettingState extends State<AccountSetting> {
   File _image;
-  String url =
-      'https://firebasestorage.googleapis.com/v0/b/comperio-1071d.appspot.com/o/default-profile.webp?alt=media&token=c737b18e-9625-4b0d-8d7c-8ef5794486f3';
+  String url ='https://firebasestorage.googleapis.com/v0/b/comperio-1071d.appspot.com
+                /o/default-profile.webp?alt=media&token=c737b18e-9625-4b0d-8d7c-8ef5794486f3';
   Future getImages() async {
     PickedFile pickedFile =
         await ImagePicker().getImage(source: ImageSource.gallery);
     var image = File(pickedFile.path);
-
     setState(() {
       _image = image;
       // print('Image path $_image');
@@ -38,13 +32,7 @@ class _AccountSettingState extends State<AccountSetting> {
         await (await uploadTask.whenComplete(() {})).ref.getDownloadURL();
     url = dowUrl.toString();
     print(url);
-    // TaskSnapshot taskSnapshot = await uploadTask.whenComplete(() {});
-    // setState(() {
-    //   print("Profile Picture uploaded");
-    //   // Scaffold.of(context)
-    //   //     .showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));  setstate ke already comm tha
-    // });
-  }
+   }
 
   @override
   Widget build(BuildContext context) {
