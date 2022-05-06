@@ -8,7 +8,6 @@ import 'package:ntp/ntp.dart';
 
 class QrScanner extends StatefulWidget {
   const QrScanner({Key key}) : super(key: key);
-
   @override
   _QrScannerState createState() => _QrScannerState();
 }
@@ -17,9 +16,9 @@ class _QrScannerState extends State<QrScanner> {
   final GlobalKey qrkey = GlobalKey(debugLabel: 'QR');
   QRViewController controller;
   Barcode barcode;
-  int threshold = 5; // 20 sec threshold
+  int threshold = 10; // 10 sec threshold
   DateTime ntpScanTime = DateTime.now();
-
+  bool flag = true;
 
   String finalText = 'Scan QR Code';
 
@@ -27,7 +26,7 @@ class _QrScannerState extends State<QrScanner> {
   void initState() {
     super.initState();
 
-    // loadNTPTime();
+    //loadNTPTime();  // ye pahle commented the
   }
 
   @override
@@ -68,7 +67,7 @@ class _QrScannerState extends State<QrScanner> {
           children: [
             buildQrView(context),
 
-             Positioned(bottom: 10, child: buildResult()), // result method
+            Positioned(bottom: 10, child: buildResult()), // result method
           ],
         ),
       ),
@@ -120,17 +119,23 @@ class _QrScannerState extends State<QrScanner> {
     final difference = ntpScanTime.difference(timeOfGen).inSeconds;
     if (difference <= threshold) {
       setState(() {
-        AttendanceRecords.totalLectureHeld+=1;
-        AttendanceRecords.noofLectureAttended+=1;
+        finalText =
+            'Your Attendence Marked Successfully Time: ' + '$difference';
 
-        finalText = 'Your Attendence Marked Successfully Time: '+'$difference';
+        if (flag) {
+          flag = false;
+          var ref = AttendanceRecords();
+          ref.markedAttendance();
+        }
       });
+      Future.delayed(Duration(seconds: 1),(){
+        Navigator.popAndPushNamed(context, '/AttendancePage');
+      });
+
     } else {
       setState(() {
-        finalText = 'Not A Valid QR Code: '+'$difference';
+        finalText = 'Not A Valid QR Code: ' + '$difference';
       });
     }
   }
 }
-
-

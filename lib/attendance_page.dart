@@ -2,43 +2,37 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 import 'package:qr_code_attendence_system/attendance_records.dart';
-
 class AttendancePage extends StatefulWidget {
   const AttendancePage({Key key}) : super(key: key);
-
   @override
   _AttendancePageState createState() => _AttendancePageState();
 }
-
 class _AttendancePageState extends State<AttendancePage> {
   int leturesheld = 30;
   int attendedletures = 28;
-  int x=0;
-  int y=0;
-  double percentage = 93.33;
-
+  int x;
+  int y;
+  double percentage=0.93;
   @override
   void initState() {
-
     super.initState();
     attendance();
   }
-
   void attendance() {
-
     setState(() {
       if(AttendanceRecords.totalLectureHeld!=null)  // Safe to use otherwise error is thrown
         x =AttendanceRecords.totalLectureHeld ;
       else{x=0;}
+
       if(AttendanceRecords.noofLectureAttended!=null)
         y = AttendanceRecords.noofLectureAttended;
-      else{x=0;}
+      else{y=0;}
+
       leturesheld = x + leturesheld;
       attendedletures = y + attendedletures;
       percentage = ((attendedletures / leturesheld) * 100);
     });
   }
-
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -115,7 +109,7 @@ class _AttendancePageState extends State<AttendancePage> {
                       child: LinearPercentIndicator(
                         width: 325,
                         lineHeight: 20,
-                        percent: percentage/100,
+                        percent: percentage!=null?percentage/100:0,
                         center: Text(
                           '${percentage.toStringAsFixed(2)} %',
                           style: TextStyle(
@@ -131,36 +125,29 @@ class _AttendancePageState extends State<AttendancePage> {
                   ],
                 ),
               ),
-              SizedBox(
-                height: 15,
-              ),
+              SizedBox( height: 15 ),
               Container(
                 margin: EdgeInsets.only(top: 20, left: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Total Quality Management',
+                    Text('Total Quality Management',
                       style: TextStyle(fontSize: 15),
                     ),
                     SizedBox(height: 5),
-                    Text(
-                      '(BMEO 0001)',
+                    Text('(BMEO 0001)',
                       style: TextStyle(color: Colors.grey, fontSize: 15),
                     ),
                     SizedBox(height: 5),
-                    Text(
-                      'Faculty :- Manoj Kumar Agrawal',
+                    Text('Faculty :- Manoj Kumar Agrawal',
                       style: TextStyle(fontSize: 15, color: Colors.purple),
                     ),
                     SizedBox(height: 5),
-                    Text(
-                      'Total Letures Held:- 0',
+                    Text('Total Letures Held:- 0',
                       style: TextStyle(fontSize: 15, color: Colors.teal),
                     ),
                     SizedBox(height: 5),
-                    Text(
-                      'Attended Lecture:- 0',
+                    Text('Attended Lecture:- 0',
                       style: TextStyle(color: Colors.grey, fontSize: 15),
                     ),
                     Container(
@@ -168,11 +155,8 @@ class _AttendancePageState extends State<AttendancePage> {
                         width: 325,
                         lineHeight: 20,
                         percent: 0.01,
-                        center: Text(
-                          '0.0%',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 15),
-                        ),
+                        center: Text('0.0%', style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 15), ),
                         linearStrokeCap: LinearStrokeCap.roundAll,
                         progressColor: Colors.red,
                         backgroundColor: Colors.grey,

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 // import 'package:intl/intl.dart';
 import 'package:ntp/ntp.dart';
+import 'package:qr_code_attendence_system/attendance_records.dart';
 
 class QrGenerator extends StatefulWidget {
   const QrGenerator({Key key}) : super(key: key);
@@ -12,12 +13,15 @@ class QrGenerator extends StatefulWidget {
 }
 
 class _QrGeneratorState extends State<QrGenerator> {
+
    Timer timer;
   DateTime ntpTime = DateTime.now();
     // String time = DateFormat('ddkkmmss').format(DateTime.now());
   @override
   void initState() {
     super.initState();
+    var ref = AttendanceRecords();
+    ref.lectureheld();
     loadNTPTime();
      timer = Timer.periodic(Duration(seconds: 5), (Timer t) => loadNTPTime());
   }

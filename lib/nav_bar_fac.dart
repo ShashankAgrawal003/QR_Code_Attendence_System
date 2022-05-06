@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_attendence_system/account_setting.dart';
 import 'package:qr_code_attendence_system/apply_leave.dart';
-
 import 'package:qr_code_attendence_system/notes_upload.dart';
 import 'package:qr_code_attendence_system/modify_attendance.dart';
 
